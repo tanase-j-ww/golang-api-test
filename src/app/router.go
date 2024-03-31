@@ -9,5 +9,10 @@ func SetRouter() *gin.Engine {
 			"message": "Health check OK",
 		})
 	})
+	r.POST("/memo", createMemo)
+	r.GET("/memo", getAllMemos)
+	r.GET("/memo/:id", getMemoByID)
+	r.PUT("/memo/:id", updateMemo)
+	r.DELETE("/memo/:id", deleteMemo)
 	return r
 }
